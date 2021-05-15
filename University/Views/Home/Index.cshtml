@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to online university</h1>
+    <br />
+    <h3 class="display-4">Choose your role:</h3>
+    <h4 class="display-4">
+        <a asp-controller="Home" asp-action="Admin">Admin</a>
+    </h4>
+    <h4 class="display-4">
+        <a asp-controller="Teachers" asp-action="TeacherList">Teacher</a>
+    </h4>
+    <h4 class="display-4">
+        <a asp-controller="Students" asp-action="StudentList">Student</a>
+    </h4>
+</div>

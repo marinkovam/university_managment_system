@@ -1,0 +1,54 @@
+﻿@model IEnumerable<University.Models.Course>
+
+@{
+    ViewData["Title"] = "Course List";
+}
+
+<h1>Choose a Course</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.credits)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.semester)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.firstTeacher)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.secondTeacher)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.credits)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.semester)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.firstTeacher.fullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.secondTeacher.fullName)
+            </td>
+            <td>
+                <a asp-controller="Enrollments" asp-action="CreateEnrollment" asp-route-id="@item.ID">Choose</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
